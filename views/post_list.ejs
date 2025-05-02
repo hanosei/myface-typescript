@@ -2,14 +2,32 @@
 <%- include('_head') -%>
 <%- include('_header') -%>
 <body>
-<h1>Posts</h1>
-<ol>
-    <% postList.results.forEach(function(post) {%>
-        <li>
-            <%= post.message %> - <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %>
-        </li>
-    <% }); %>
-</ol>
+    <h1>Posts</h1>
+    <main></main>
+    <ol>
+        <% postList.results.forEach(function(post) {%>
+            <li>
+                <header>
+                    <h2>Post by User <%= post.userID %></h2>
+                    <h3> Post created - <%= format(post.createdAt, "yyyy-MM-dd" ) %></h6>
+                </header>
+                <%= post.message %> 
+            </li>
+        <% }); %>
+    </ol>
+    <nav aria-label="Pagnation"
+        <ul>
+            <% if (hasPreviousPage) %>
+                <li><a href="/posts?page= <%= previousPage%>"> Go back</a></li>
+
+            <li>Page <%= currentPage %></li>
+
+            <% if (hasNextPage) %>
+                <li><a href="/posts?page= <%= nextPage%>"> Next Page</a></li>
+
+
+        </ul>
+    </nav>
 </body>
 <%- include('_footer') -%>
 </html>

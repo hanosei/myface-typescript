@@ -18,9 +18,17 @@ router.get("/", async (request, response) => {
     : 10;
 
   const postList = await getPageOfPosts(page, pageSize);
+
+  const totalPosts = postList.total;
+
   return response.render("post_list", {
     postList: postList,
     format: format,
+    currentPage: page,
+    hasNextPage: totalPosts > page * pageSize,
+    hasPreviousPage: page > 1,
+    nextPage: page + 1,
+    previousPage: page - 1,
   });
 });
 
