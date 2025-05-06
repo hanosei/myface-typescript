@@ -5,23 +5,32 @@
     <h1>Posts</h1>
     <main></main>
     <ol>
+        <div class="post-feed">
         <% postList.results.forEach(function(post) {%>
             <li>
-                <header>
-                    <h2>Post by User <%= post.userID %></h2>
-                    <h3> Post created - <%= format(post.createdAt, "yyyy-MM-dd" ) %></h6>
-                </header>
-                <%= post.message %> 
+                <div class="post-container">
+                    <div class="post-header-container">
+                        <header>
+                            <h2>Post by <%= post.postedBy.username%></h2>
+                            <h3> Post created - <%= format(post.createdAt, "yyyy-MM-dd" ) %></h3>
+                        </header>
+                    </div>
+                    <div class="image-container"> 
+                        <img src= <%= post.imageUrl %> alt="images uploaded to the post by user" >
+                    </div>
+                    <div class="post-caption" aria-label="post caption">
+                    <%= post.message %> 
+                    </div>
+                </div>
             </li>
         <% }); %>
+        </div>
     </ol>
-    <nav aria-label="Pagnation"
+    <nav aria-label="Pagination">
         <ul>
+            <li>Page <%= currentPage %></li>
             <% if (hasPreviousPage) %>
                 <li><a href="/posts?page= <%= previousPage%>"> Go back</a></li>
-
-            <li>Page <%= currentPage %></li>
-
             <% if (hasNextPage) %>
                 <li><a href="/posts?page= <%= nextPage%>"> Next Page</a></li>
         </ul>

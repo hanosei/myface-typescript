@@ -58,4 +58,6 @@ async function toPostModel(post: Post): Promise<PostModel> {
     likedBy: await getByPostInteraction(post.id, "LIKE", 1, 10),
     dislikedBy: await getByPostInteraction(post.id, "DISLIKE", 1, 10),
   };
+  
 }
+//console.log(await toPostModel())
