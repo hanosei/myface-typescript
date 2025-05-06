@@ -1,0 +1,30 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 32px;
+    padding: 0 200px;
+    background-color: #151820;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: whitesmoke;
+}
+
+h1 {
+    font-size: 32px;
+    color: whitesmoke;
+    font-weight: lighter;
+}
+
+a {
+    all: unset;
+    font-size: 24px;
+    color: whitesmoke;
+}
+
+#website-title {
+    color: whitesmoke;
+}
+
+nav a {
+    margin: 0 40px;
+}

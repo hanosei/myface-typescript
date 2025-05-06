@@ -9,10 +9,8 @@
             <li>
                 <div class="post-container">
                     <div class="post-header-container">
-                        <header>
                             <h2 class="username"> <%= post.postedBy.username%></h2>
                             <h2> <%= format(post.createdAt, "dd-MM-yyyy" ) %></h2>
-                        </header>
                     </div>
                     <div class="image-container"> 
                         <img src= <%= post.imageUrl %> alt="images uploaded to the post by user" >
