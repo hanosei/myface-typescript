@@ -1,6 +1,7 @@
 <html lang="en-gb">
 <%- include('_head') -%>
 <%- include('_header') -%>
+<%- include('_side_navbar') -%>
 <body>
     <main>
         <div class="post-feed">
@@ -34,17 +35,9 @@
                 </div>
             </li>
         <% }); %>
+        <li><a href="/posts?page= <%= morePosts%>"> Load More</a></li>
         </div>
     </main>
-    <nav aria-label="Pagination">
-        <ul>
-            <li>Page <%= currentPage %></li>
-            <% if (hasPreviousPage) %>
-                <li><a href="/posts?page= <%= previousPage%>"> Go back</a></li>
-            <% if (hasNextPage) %>
-                <li><a href="/posts?page= <%= nextPage%>"> Next Page</a></li>
-        </ul>
-    </nav>
 </body>
 <%- include('_footer') -%>
 </html>

@@ -2,31 +2,57 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 32px;
+    font-size: 24px;
     padding: 0 200px;
     background-color: #151820;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: whitesmoke;
+    color: #f5f5f5;
     height: 80px;
     padding-bottom: 5px;
 }
 
 h1 {
-    font-size: 24px;
     color: whitesmoke;
     font-weight: lighter;
+    font-size: 24px;
+}
+
+#main-nav {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-evenly;
+    margin: 0 auto; */
 }
 
 a {
     all: unset;
-    font-size: 24px;
     color: whitesmoke;
+}
+
+a:hover {
+    cursor: pointer;
 }
 
 #website-title {
     color: whitesmoke;
 }
 
-nav a {
+#main-nav a {
     margin: 0 40px;
+}
+
+@media (max-width: 1044px) {
+    header {
+        font-size: 20px;
+    }
+    #main-nav a {
+        margin: 0 15px;
+    }
+    
+}
+
+@media (orientation:portrait) {
+    header {
+        display: none;
+    }    
 }

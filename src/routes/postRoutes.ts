@@ -24,11 +24,12 @@ router.get("/", async (request, response) => {
   return response.render("post_list", {
     postList: postList,
     format: format,
-    currentPage: page,
-    hasNextPage: totalPosts > page * pageSize,
-    hasPreviousPage: page > 1,
-    nextPage: page + 1,
-    previousPage: page - 1,
+    morePosts: await getPageOfPosts(page, pageSize + 9), 
+    // currentPage: page,
+    // hasNextPage: totalPosts > page * pageSize,
+    // hasPreviousPage: page > 1,
+    // nextPage: page + 1,
+    // previousPage: page - 1,
   });
 });
 
