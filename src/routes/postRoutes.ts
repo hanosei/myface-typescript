@@ -15,7 +15,7 @@ router.get("/", async (request, response) => {
   const page = request.query.page ? parseInt(request.query.page as string) : 1;
   const pageSize = request.query.pageSize
     ? parseInt(request.query.pageSize as string)
-    : 10;
+    : 9;
 
   const postList = await getPageOfPosts(page, pageSize);
 

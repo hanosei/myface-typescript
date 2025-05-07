@@ -7,17 +7,8 @@
         <% postList.results.forEach(function(post) {%>
             <li>
                 <div class="post-container">
-                    <div class="post-header-container">
-                            <h2 class="username"> <%= post.postedBy.username%></h2>
-                            <h2> <%= format(post.createdAt, "dd-MM-yyyy" ) %></h2>
-                    </div>
                     <div class="image-container"> 
                         <img src= <%= post.imageUrl %> alt="images uploaded to the post by user" >
-                    </div>
-                    <div class="post-caption-container"> 
-                        <div class="post-caption" aria-label="post caption">
-                        <%= post.message %> 
-                        </div>
                     </div>
                     <div class="button-container">
                         <div class="like-button">
@@ -29,6 +20,15 @@
                             <form action="/posts/<%= post.id %>/dislike" method="POST">
                             <button type="submit"><i class="fa fa-thumbs-down" style="color: #ffffff;"></i> </button>
                         </form>
+                        </div>
+                    </div>
+                    <div class="post-header-container">
+                            <h2 class="username"> <%= post.postedBy.username%></h2>
+                            <h2> <%= format(post.createdAt, "dd/MM/yyyy" ) %></h2>
+                    </div>
+                    <div class="post-caption-container"> 
+                        <div class="post-caption" aria-label="post caption">
+                        <%= post.message %> 
                         </div>
                     </div>
                 </div>
