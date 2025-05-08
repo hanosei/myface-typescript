@@ -1,54 +1,62 @@
 
-.side-navbar {
-    background-color: #151820;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 320px;
-    z-index: 100;
-    justify-content: space-between;
-    right: 0;
+#side-navbar {
+  background-color: #151820;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 320px;
+  transform: translateX(100%);
+  z-index: 100;
+  justify-content: space-between;
+  right: 0;
+  transition: 0.3s;
+
+}
+
+#side-navbar.open {
+  transform: translateX(0);
+  transition: 0.3s;
 }
 
 #sidenav-website-title {
-    margin-top: 80px;
-    padding: 0;
-    color: whitesmoke;
+  margin-top: 80px;
+  padding: 0;
+  color: whitesmoke;
 }
 
 nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 0 auto;
 }
 
 nav a {
-    margin: 10px auto;
-    font-size: 1.4rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 10px auto;
+  font-size: 1.4rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .sidebar-logos-container {
-    width: 60%;
-    height: 140px;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto 20px auto;
-    justify-content: space-evenly;
+  width: 60%;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 20px auto;
+  justify-content: space-evenly;
 }
 
 .sidebar-logos img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 #softwire-logo {
-    height: 35%;
-    object-fit: cover;
+  height: 35%;
+  object-fit: cover;
 }
 
 .menu-btn {
@@ -73,11 +81,31 @@ nav a {
   border-radius: 2px;
 }
 
-@media (orientation:landscape) {
-    .side-navbar {
-        display: none;
-    }    
+.menu-btn.open .top {
+  transform: rotate(46deg) translate(8px, 5px);
+}
+.menu-btn.open .bottom {
+  transform: rotate(-46deg) translate(8px, -5px);
+}
+.menu-btn.open .middle {
+  opacity: 0;
+}
+
+@media (min-width: 1023px) {
+  #side-navbar {
+      display: none;
+  }
+  
+  .menu-btn {
+      display: none;
+  }
 } 
+
+@media (max-width: 1023px) {
+    .menu-btn {
+        display: flex;
+    }
+}
 
 /* transform bars into X */
 /* .menu-btn.active .top {
@@ -88,4 +116,4 @@ nav a {
 }
 .menu-btn.active .bottom {
   transform: rotate(-45deg) translateY(-8px);
-}  */
+}   */

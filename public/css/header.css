@@ -20,8 +20,7 @@ h1 {
 #main-nav {
     display: flex;
     flex-direction: row;
-    /* justify-content: space-evenly;
-    margin: 0 auto; */
+    /* padding-left: 2rem; */
 }
 
 a {
@@ -35,13 +34,27 @@ a:hover {
 
 #website-title {
     color: whitesmoke;
+    padding-right: 47.03px;
 }
 
 #main-nav a {
     margin: 0 40px;
 }
 
-@media (max-width: 1044px) {
+@media (max-width: 1024px) {
+    header {
+        font-size: 20px;
+    }
+    #main-nav a {
+        margin: 0 15px;
+    }
+    #website-title {
+        padding-right: 26.64px;
+    }
+    
+}
+
+/* @media (max-width: 1024px) {
     header {
         font-size: 20px;
     }
@@ -49,9 +62,9 @@ a:hover {
         margin: 0 15px;
     }
     
-}
+} */
 
-@media (orientation:portrait) {
+@media (orientation:portrait), (max-width: 1023px) {
     header {
         display: none;
     }    

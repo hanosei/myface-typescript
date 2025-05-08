@@ -3,7 +3,10 @@
 <%- include('_header') -%>
 <%- include('_side_navbar') -%>
 <body>
-    <main>
+        <main>
+            <div id="change-post-color-button">
+                <button>RANDOMISE COLOUR</button>
+            </div>
         <div class="post-feed">
         <% postList.results.forEach(function(post) {%>
             <li>
