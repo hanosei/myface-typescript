@@ -20,8 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('click', (e) => {
       let sideNavBarClicked = sideNavBar.contains(e.target)
       let menuButtonClicked = menuButton.contains(e.target)
-      const colourButtonClicked = colourButton.contains(e.target)
-      if (sideNavBarOpen && !sideNavBarClicked && !menuButtonClicked && !colourButtonClicked) {
+      if (sideNavBarOpen && !sideNavBarClicked && !menuButtonClicked) {
         sideNavBar.classList.toggle("open");
         menuButton.classList.toggle("open");
         sideNavBarOpen = false;
