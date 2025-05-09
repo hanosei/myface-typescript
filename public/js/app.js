@@ -91,6 +91,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       if (canSubmit && usernameValid) {
         submitButton.disabled = false;
+      } else {
+        submitButton.disabled = true;
       }
     }
 
