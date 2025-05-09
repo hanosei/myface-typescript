@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (e.key === "Escape" && sideNavBarOpen) {
         sideNavBar.classList.toggle("open");
         menuButton.classList.toggle("open");
+        sideNavBarOpen = false;
       }
     });
 
