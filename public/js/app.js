@@ -13,23 +13,21 @@ document.addEventListener("DOMContentLoaded", function () {
     sideNavBar.classList.toggle("open");
     menuButton.classList.toggle("open");
     sideNavBarOpen = true;
-    // let currentDisplay = window.getComputedStyle(sideNavBar).display;
-    // if (currentDisplay === "none") {
-      
-    //   sideNavBar.style.display = "flex"; 
-    // } else {
-    //   sideNavBar.style.display = "none";
-    // }
   });
 
+
+
     window.addEventListener('click', (e) => {
-      const sideNavBarClicked = sideNavBar.contains(e.target)
-      const menuButtonClicked = menuButton.contains(e.target)
-      if (sideNavBarOpen && !sideNavBarClicked && !menuButtonClicked) {
+      let sideNavBarClicked = sideNavBar.contains(e.target)
+      let menuButtonClicked = menuButton.contains(e.target)
+      const colourButtonClicked = colourButton.contains(e.target)
+      if (sideNavBarOpen && !sideNavBarClicked && !menuButtonClicked && !colourButtonClicked) {
         sideNavBar.classList.toggle("open");
         menuButton.classList.toggle("open");
+        sideNavBarOpen = false;
       }
     });
+
 
     document.addEventListener("keydown" , (e) => {
       if (e.key === "Escape" && sideNavBarOpen) {
@@ -96,11 +94,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
+    if (createUserForm) {
     checkForm(usernameValid);
+    }
 
-
-    // Add eventlistener to form div that calls checkForm again and again 
-    createUserForm.addEventListener("input", (e) => {
+    if (createUserForm) {
+      createUserForm.addEventListener("input", (e) => {
       const usernameInputBoxClicked = usernameInputBox.contains(e.target);
       if (usernameInputBoxClicked) {
         usernameValid = checkUsernameInput();
@@ -109,6 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
         checkForm(usernameValid);
       }
     });
+  }
 
 
 });

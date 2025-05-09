@@ -25,7 +25,7 @@ main {
     margin: 0;
 }
 
-#change-post-color-button {
+#change-post-color-button-container {
     /* position: absolute; */
     width: 100vw;
     display: flex;
@@ -36,14 +36,14 @@ main {
     color: whitesmoke;
 }
 
-#change-post-color-button button{
+#change-post-color-button-container button{
     border-style: solid;
     border-color: whitesmoke;
     border-width: 2px;
     padding: 10px;    
 }
 
-#change-post-color-button button:hover{
+#change-post-color-button-container button:hover{
     cursor: pointer;
 }
 
