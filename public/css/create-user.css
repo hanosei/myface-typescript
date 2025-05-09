@@ -1,0 +1,53 @@
+#create-user-form-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: whitesmoke;
+}
+
+label {
+    display: block;
+    margin: 15px 0;
+}
+
+input {
+    display: block;
+    margin-top: 8px;
+}
+
+#create-user-form {
+    background-color: #151820;
+    padding: 35px;
+}
+
+#create-user-title {
+    color: whitesmoke;
+}
+
+#create-user-submit-button {
+    margin-top: 15px;
+    border-style: solid;
+    border-color: whitesmoke;
+    border-width: 2px;
+    padding: 8px 10px;   
+}
+
+#create-user-submit-button:hover {
+    cursor: pointer;
+}
+
+#create-user-submit-button:disabled {
+    color: grey;
+    cursor: default;
+}
+
+#username-validation-message {
+    width: 180px;
+    font-size: 0.75rem;
+    display: none;
+}
+#username-validation-message .show {
+    display: block;
+}
+
